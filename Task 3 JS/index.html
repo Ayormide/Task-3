@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const checker =(n)=>
+        {
+            let s = " ";
+            if (n % 2=== 0)
+            {
+                s += "yu";
+            }
+            if (n % 3 === 0)
+            {
+                s= s.concat(s.length === 0 ? "gi" : "-gi");
+            }
+            if (n % 5 === 0)
+            {
+                s = s.concat(s.length === 0 ? "oh" : "-oh");
+            }
+            if (s.length === 0)
+            {
+                s = n.toString();
+            }
+            return s;
+        }
+        const Result = (N) => 
+        {
+            let myResult = [];
+            for (let i = 1; i <= N; ++i)
+            {
+                const curr = checker (i);
+                myResult.push(curr);
+            }
+            return myResult;
+        }
+
+        const answer = Result((N)=100);
+        for (let i = 0; i < answer.length; ++i){
+            console.log(answer[i]);
+        }
+    </script>
+</body>
+</html>
